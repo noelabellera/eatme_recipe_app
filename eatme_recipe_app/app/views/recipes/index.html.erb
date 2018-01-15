@@ -1,0 +1,13 @@
+<h1>Recipes</h1>
+
+<% @recipes.each do |recipe| %>
+
+    <div id="recipeBox">
+        <%= link_to recipe.title recipe_path(recipe) %>
+        <%= recipe.time %>
+        <%= recipe.yield %>
+
+    </div>
+<% end %>
+
+<%= link_to 'New Recipe', new_recipe_path %>

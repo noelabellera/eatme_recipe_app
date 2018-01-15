@@ -1,0 +1,27 @@
+<h1>hello</h1>
+
+<%= form_for @recipe do |f| %>
+<div>
+    <%= f.label :title, "Name of Recipe: " %>
+    <%= f.text_field :title %>
+</div>
+</br>
+<div>
+    <%= f.label :time, "Time to make: " %>
+    <%= f.text_field :time %>
+</div>
+</br>
+<div>
+    <%= f.label :yield, "Yield: " %>
+    <%= f.text_field :yield %>
+</div>
+</br>
+<div>
+    <%= f.label :course, "Course:  " %>
+    <%= f.text_field :course %>
+</div>
+</br>
+
+<%= f.submit "Save Recipe" %>
+
+<% end %>
