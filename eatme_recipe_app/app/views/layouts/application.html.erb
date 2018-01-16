@@ -16,6 +16,10 @@
           <% if current_user %>
             Welcome, <%= current_user.name %>
             &nbsp;&nbsp;|&nbsp;&nbsp;
+            <%= link_to "My Recipes", recipes_path %>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <%= link_to 'Add New Recipe', new_recipe_path %>
+             &nbsp;&nbsp;|&nbsp;&nbsp;
             <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
           <% else %>
             <%= link_to 'Log In', login_path %>
@@ -24,10 +28,12 @@
           <% end %>
         </p>
       </div>
-      <div>
-        <h1>EAT ME!</h1>
-      </div>
+      
+      
+
+    
     </div>
+   
 
     <%= yield %>
   </body>

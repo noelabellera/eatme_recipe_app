@@ -5,9 +5,10 @@
     <div id="recipeBox">
         </br>
         <h1><%= link_to recipe.title, recipe_path(recipe) %></h1>
-        <p>Time to make: <%= recipe.time %> </p>
+        <p>Time to make: <%= recipe.time %> minutes</p>
         <p>Servings: <%= recipe.yield %></p>
         <p>Course: <%= recipe.course %></p>
+        <p>Created: <%= recipe.created_at %></p>
         </br>
         <%= link_to 'Show', recipe %>
         <%= link_to 'Edit', edit_recipe_path(recipe) %>

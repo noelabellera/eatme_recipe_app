@@ -14,10 +14,7 @@
  *= require_self
  */
 
-* {
-    color: white;
-    background-color: black;
-}
+
  
  #title {
     display: flex;
@@ -35,11 +32,25 @@
 }
 
 #recipeForm {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
 }
 
 #recipeBox {
     border: 2px solid red;
+    margin: 5px 15px;
+    padding: 5px 10px;
 }
+
+/* label{
+    width: 7em;
+    float: left;
+    text-align: right;
+    margin-right: 0.5em;
+    display: block
+  } */
+
 
  
