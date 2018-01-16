@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
     before_action :authorize, except: [:index, :show]
-    before_action :set_house, only: [:show, :edit, :update, :destroy]
+    before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
 
     def index 
@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
 
     def new
         @recipe = Recipe.new
-        @user = User.new
+       
     end
 
     def edit 
@@ -22,7 +22,8 @@ class RecipesController < ApplicationController
     end
     
     def create 
-        @recipe = Recipe.new(recipe_params)
+        @user = User.find(session[:user_id])
+        @recipe = @user.recipes.new(recipe_params)
         
         if @recipe.save
             redirect_to recipes_path
@@ -32,8 +33,9 @@ class RecipesController < ApplicationController
     end
 
     def destroy 
-       @recipe = Recipe.find(params[:id])
-       @recipe.destroy  
+        @user = User.find(session[:user_id])
+        @recipe = Recipe.find(params[:id])
+        @recipe.destroy  
        redirect_to recipes_path
     end
     

@@ -3,11 +3,18 @@
 <% @recipes.each do |recipe| %>
 
     <div id="recipeBox">
-        <%= link_to recipe.title recipe_path(recipe) %>
-        <%= recipe.time %>
-        <%= recipe.yield %>
-
+        </br>
+        <h1><%= link_to recipe.title, recipe_path(recipe) %></h1>
+        <p>Time to make: <%= recipe.time %> </p>
+        <p>Servings: <%= recipe.yield %></p>
+        <p>Course: <%= recipe.course %></p>
+        </br>
+        <%= link_to 'Show', recipe %>
+        <%= link_to 'Edit', edit_recipe_path(recipe) %>
+        <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
+    </br>
 <% end %>
-
+</br>
+</br>
 <%= link_to 'New Recipe', new_recipe_path %>
