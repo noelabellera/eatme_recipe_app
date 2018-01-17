@@ -1,36 +1,40 @@
 <div id=#recipeShow>
-<h1><%= @recipe.title %></h1>
-<p>Time to make: <%= @recipe.time %>&nbsp; |&nbsp; Servings: <%= @recipe.yield %> &nbsp; |&nbsp; Course: <%= @recipe.course %></p>
+    <h1><%= @recipe.title %></h1>
+    <p>Time to make: <%= @recipe.time %>&nbsp; |&nbsp; Servings: <%= @recipe.yield %> &nbsp; |&nbsp; Course: <%= @recipe.course %></p>
 
 
-<h3>Ingredients</h3>
-<% @recipe.ingredients.each do |ingredient| %>
-    <ul>
-        <li>
-            <%= ingredient.item %> </br>
-            (<%= link_to 'Delete', ingredient_path(ingredient),
+    <h3>Ingredients</h3>
+    <% @recipe.ingredients.each do |ingredient| %>
+        <ul>
+            <li>
+                <%= ingredient.item %> </br>
+                <%= link_to '( Delete |', ingredient_path(ingredient),
                     method: :delete,
-                    data: { confirm: 'Are You Sure?' } %>
-            |
-            <%= link_to 'Edit', edit_ingredient_path(ingredient),
-                    method: :get %>)
-        </li>
-    </ul>
-<% end %>
+                    data: { confirm: 'Are You Sure?' } if ingredient.recipe.user == current_user
+                    %>
+                
+                <%= link_to 'Edit )', edit_ingredient_path(ingredient),
+                    method: :get if ingredient.recipe.user == current_user
+                    %>
+            </li>
+        </ul>
+    <% end %>
 
 
-<h3>Directions</h3>
-<% @count = 0 %>
-<% @recipe.directions.each do |direction| %>
+    <h3>Directions</h3>
+    <% @count = 0 %>
+    <% @recipe.directions.each do |direction| %>
     
     
     <p>
         <%= @count += 1 %>.&nbsp; <%= direction.instruction %></br>
-        (<%= link_to 'Delete', direction_path(direction),
+        <%= link_to '( Delete |', direction_path(direction),
                     method: :delete,
-                    data: { confirm: 'Are You Sure?' } %> |
-        <%= link_to 'Edit', edit_direction_path(direction),
-                    method: :get %>)
+                    data: { confirm: 'Are You Sure?'  } if direction.recipe.user == current_user 
+                    %> 
+        <%= link_to 'Edit )', edit_direction_path(direction),
+                    method: :get if direction.recipe.user == current_user
+                     %>
     </p>
     
 <% end %>

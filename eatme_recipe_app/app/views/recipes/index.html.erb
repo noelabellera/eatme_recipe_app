@@ -1,21 +1,25 @@
 <h1>Recipes</h1>
 
-<% @recipes.each do |recipe| %>
+<div id="boxes">
+    <% @recipes.each do |recipe| %>
 
     <div id="recipeBox">
-        </br>
         <h1><%= link_to recipe.title, recipe_path(recipe) %></h1>
-        <p>Time to make: <%= recipe.time %> minutes</p>
-        <p>Servings: <%= recipe.yield %></p>
-        <p>Course: <%= recipe.course %></p>
-        <p>Created: <%= recipe.created_at %></p>
+        <div>Time: <%= recipe.time %> minutes  &nbsp;|&nbsp;  Servings: <%= recipe.yield %></br> Course: <%= recipe.course %></div>
+        <div>Created: <%= recipe.created_at %></div>
+         <div>Created By: <%= recipe.user.email %></div>
+       
         </br>
-        <%= link_to 'Show', recipe %>
-        <%= link_to 'Edit', edit_recipe_path(recipe) %>
-        <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <div>
+        <%= link_to 'Show  ', recipe %>
+        <%= link_to '|  Edit Recipe Info |', edit_recipe_path(recipe) if recipe.user == current_user %>
+        <%= link_to 'Delete Recipe', recipe, method: :delete, data: { confirm: 'Are you sure?' } if recipe.user == current_user %>
+        </div>
     </div>
     </br>
 <% end %>
-</br>
-</br>
+</div>
+
+</br></br>
+
 <%= link_to 'New Recipe', new_recipe_path %>

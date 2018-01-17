@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :ingredients, shallow: true
     resources :directions, shallow: true
+    resources :comments, shallow: true
   end
 
   resources :users, only: [:new, :create]
