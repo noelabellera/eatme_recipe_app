@@ -7,12 +7,13 @@
 <% @recipe.ingredients.each do |ingredient| %>
     <ul>
         <li>
-            <%= ingredient.item %> &nbsp; | &nbsp;
-            <%= link_to 'Delete', ingredient_path(ingredient),
+            <%= ingredient.item %> </br>
+            (<%= link_to 'Delete', ingredient_path(ingredient),
                     method: :delete,
                     data: { confirm: 'Are You Sure?' } %>
+            |
             <%= link_to 'Edit', edit_ingredient_path(ingredient),
-                    method: :get %>
+                    method: :get %>)
         </li>
     </ul>
 <% end %>
@@ -24,12 +25,12 @@
     
     
     <p>
-        <%= @count += 1 %>.&nbsp; <%= direction.instruction %>
-        <%= link_to 'Delete', direction_path(direction),
+        <%= @count += 1 %>.&nbsp; <%= direction.instruction %></br>
+        (<%= link_to 'Delete', direction_path(direction),
                     method: :delete,
-                    data: { confirm: 'Are You Sure?' } %>
+                    data: { confirm: 'Are You Sure?' } %> |
         <%= link_to 'Edit', edit_direction_path(direction),
-                    method: :get %>
+                    method: :get %>)
     </p>
     
 <% end %>

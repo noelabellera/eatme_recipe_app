@@ -1,4 +1,6 @@
 class IngredientsController < ApplicationController
+    before_action :authorize, except: [:index, :show]
+    before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
 
     def new
     end
@@ -31,7 +33,11 @@ class IngredientsController < ApplicationController
         @ingredient.destroy
         redirect_to recipe_path(@ingredient.recipe)
     end
+    
 private
+    def set_ingredient
+        @ingredient = Ingredient.find(params[:id])
+    end
 
     def ingredient_params
         params.require(:ingredient).permit(:item)

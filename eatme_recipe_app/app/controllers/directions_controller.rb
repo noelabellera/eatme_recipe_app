@@ -1,4 +1,7 @@
 class DirectionsController < ApplicationController
+    before_action :authorize, except: [:index, :show]
+    before_action :set_direction, only: [:show, :edit, :update, :destroy]
+    
     def new
     end
 
@@ -34,6 +37,10 @@ class DirectionsController < ApplicationController
 
 
 private
+
+    def set_direction
+        @direction = Direction.find(params[:id])
+    end
 
     def direction_params
         params.require(:direction).permit(:instruction)
