@@ -1,12 +1,18 @@
+<div id=#recipeShow>
 <h1><%= @recipe.title %></h1>
-<p>Time to make: <%= @recipe.time %>&nbsp |&nbsp Servings: <%= @recipe.yield %> &nbsp |&nbsp Course: <%= @recipe.course %></p>
+<p>Time to make: <%= @recipe.time %>&nbsp; |&nbsp; Servings: <%= @recipe.yield %> &nbsp; |&nbsp; Course: <%= @recipe.course %></p>
 
 
 <h3>Ingredients</h3>
 <% @recipe.ingredients.each do |ingredient| %>
     <ul>
         <li>
-            <%= ingredient.item %>
+            <%= ingredient.item %> &nbsp; | &nbsp;
+            <%= link_to 'Delete', ingredient_path(ingredient),
+                    method: :delete,
+                    data: { confirm: 'Are You Sure?' } %>
+            <%= link_to 'Edit', edit_ingredient_path(ingredient),
+                    method: :get %>
         </li>
     </ul>
 <% end %>
@@ -17,7 +23,14 @@
 <% @recipe.directions.each do |direction| %>
     
     
-    <p><%= @count += 1 %>.&nbsp; <%= direction.instruction %></p>
+    <p>
+        <%= @count += 1 %>.&nbsp; <%= direction.instruction %>
+        <%= link_to 'Delete', direction_path(direction),
+                    method: :delete,
+                    data: { confirm: 'Are You Sure?' } %>
+        <%= link_to 'Edit', edit_direction_path(direction),
+                    method: :get %>
+    </p>
     
 <% end %>
 <hr>
@@ -45,3 +58,5 @@
 </br>
 <%= link_to 'Edit Recipe', edit_recipe_path(@recipe) %> |
 <%= link_to "Back to Recipe Posts", recipes_path %>
+
+</div>

@@ -13,11 +13,23 @@ class IngredientsController < ApplicationController
         @ingredient = Ingredient.post(params[:id])
     end
 
+    def edit
+        @ingredient = Ingredient.find(params[:id])
+    end
+
+    def update
+        @ingredient = Ingredient.find(params[:id])
+        if @ingredient.update_attributes(ingredient_params)
+            redirect_to recipe_path(@ingredient.recipe)
+        else 
+            render :edit
+        end
+    end 
+
     def destroy
-        @recipe = Recipe.post(params[:recipe_id])
-        @ingredient = @recipe.ingredients.find(params[:id])
+        @ingredient = Ingredient.find(params[:id])
         @ingredient.destroy
-        redirect_to recipe_path(@recipe)
+        redirect_to recipe_path(@ingredient.recipe)
     end
 private
 
