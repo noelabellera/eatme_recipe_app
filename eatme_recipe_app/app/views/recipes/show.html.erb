@@ -10,12 +10,10 @@
                 <%= ingredient.item %> </br>
                 <%= link_to '( Delete |', ingredient_path(ingredient),
                     method: :delete,
-                    data: { confirm: 'Are You Sure?' } if ingredient.recipe.user == current_user
-                    %>
+                    data: { confirm: 'Are You Sure?' } if ingredient.recipe.user == current_user %>
                 
                 <%= link_to 'Edit )', edit_ingredient_path(ingredient),
-                    method: :get if ingredient.recipe.user == current_user
-                    %>
+                    method: :get if ingredient.recipe.user == current_user %>
             </li>
         </ul>
     <% end %>
@@ -24,69 +22,67 @@
     <h3>Directions</h3>
     <% @count = 0 %>
     <% @recipe.directions.each do |direction| %>
-    
-    
-    <p>
-        <%= @count += 1 %>.&nbsp; <%= direction.instruction %></br>
+    <p><%= @count += 1 %>.&nbsp; <%= direction.instruction %></br>
         <%= link_to '( Delete |', direction_path(direction),
                     method: :delete,
-                    data: { confirm: 'Are You Sure?'  } if direction.recipe.user == current_user 
-                    %> 
+                    data: { confirm: 'Are You Sure?'  } if direction.recipe.user == current_user %> 
         <%= link_to 'Edit )', edit_direction_path(direction),
-                    method: :get if direction.recipe.user == current_user
-                     %>
+                    method: :get if direction.recipe.user == current_user %>
     </p>
-    
-<% end %>
-<hr>
+    <% end %>
+    <hr>
 
 
-<%= form_for ([@recipe, @recipe.ingredients.build]) do |f| %>
-    <p>
-        <%= f.label :item, 'Ingredient'%></br>
-        <%= f.text_field :item %>
-    </p>
-    <p><%= f.submit "Add Ingredient" %></p>
+    <%= form_for ([@recipe, @recipe.ingredients.build]) do |f| %>
+        <p>
+            <%= f.label :item, 'Ingredient'%></br>
+            <%= f.text_field :item %>
+        </p>
+        <p><%= f.submit "Add Ingredient" %></p>
 
-    
-<% end %>
-
-
-<%= form_for ([@recipe, @recipe.directions.build]) do |f| %>
-    <p>
-        <%= f.label :instruction, 'Direction' %></br>
-        <%= f.text_area :instruction %>
-    </p>
-    <p><%= f.submit  "Add Direction" %></p>
-<% end %>
-
-</br>
-<hr>
-
-<%= form_for ([@recipe, @comment]) do |f| %>
-    <p>
-        <%= f.label :post, 'Leave a comment' %></br>
-        <%= f.text_area :post %>
-    </p>
-    <p><%= f.submit  "Submit Comment" %></p>
-<% end %>
-<hr>
-
-<div id="commentBox">
-    <h3>Comments</h3>
-        <% @recipe.comments.reverse_each do |comment| %>
-            <hr>
-            <ul>
-                <li>
-                    <p><%= comment.post %></p></br>
-                    <p><%= comment.user.name %></p></br>
-
-                </li>
-            </ul>
         
-        <% end %>
-</div>
+    <% end %>
 
+
+    <%= form_for ([@recipe, @recipe.directions.build]) do |f| %>
+        <p>
+            <%= f.label :instruction, 'Direction' %></br>
+            <%= f.text_area :instruction %>
+        </p>
+        <p><%= f.submit  "Add Direction" %></p>
+    <% end %>
+
+    </br>
+    <hr>
+
+    <%= form_for ([@recipe, @comment]) do |f| %>
+        <p>
+            <%= f.label :post, 'Leave a comment' %></br>
+            <%= f.text_area :post %>
+        </p>
+        <p><%= f.submit  "Submit Comment" %></p>
+    <% end %>
+    <hr>
+
+    <div id="commentBox">
+        <h3>Comments</h3>
+            <% @recipe.comments.reverse_each do |comment| %>
+                <hr>
+                
+                <p><%= comment.user.email %></p>
+                
+                <p><%= comment.post %></p>
+                <%= link_to '( Delete ', comment_path(comment),
+                    method: :delete,
+                    data: { confirm: 'Are You Sure?'  } if comment.user == current_user %> 
+                <%= link_to '| Edit )', edit_comment_path(comment),
+                    method: :get if comment.user == current_user %>
+
+                
+            
+            <% end %>
+    </div>
+    <hr>
     <%= link_to 'Edit Recipe', edit_recipe_path(@recipe) %> |
     <%= link_to "Back to Recipe Posts", recipes_path %>
 

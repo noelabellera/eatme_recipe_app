@@ -49,6 +49,10 @@ class RecipesController < ApplicationController
         @recipe.destroy  
        redirect_to recipes_path
     end
+
+    def my_recipes
+        @recipes = current_user.recipes
+    end
     
     private
 

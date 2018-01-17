@@ -19,9 +19,13 @@
             &nbsp;&nbsp;|&nbsp;&nbsp;
             <%= link_to "All Recipes", recipes_path %>
             &nbsp;&nbsp;|&nbsp;&nbsp;
+            <%= link_to 'Your Recipes', recipes_user_path %>
+             &nbsp;&nbsp;|&nbsp;&nbsp;
             <%= link_to 'Add New Recipe', new_recipe_path %>
              &nbsp;&nbsp;|&nbsp;&nbsp;
             <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+         
+
           <% else %>
             <%= link_to 'Log In', login_path %>
             &nbsp;&nbsp;|&nbsp;&nbsp;

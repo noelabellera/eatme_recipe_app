@@ -5,3 +5,4 @@ class Recipe < ApplicationRecord
   has_many :directions, dependent: :destroy
   has_many :comments, dependent: :destroy
 end
+

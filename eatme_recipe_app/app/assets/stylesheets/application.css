@@ -62,16 +62,16 @@
 
 
 
-  #boxes {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
 
-  }
 
   body {
     background-color: #C8C8C8;
     font-family: 'Carter One', cursive;
+  }
+
+  commentBox {
+      background-color: white;
+      border: 2px solid black;
   }
 
 
