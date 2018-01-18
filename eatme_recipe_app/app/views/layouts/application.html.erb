@@ -15,22 +15,40 @@
       <div id=header>
         <p>
           <% if current_user %>
-            Welcome, <%= current_user.name %>
-            &nbsp;&nbsp;|&nbsp;&nbsp;
-            <%= link_to "All Recipes", recipes_path %>
-            &nbsp;&nbsp;|&nbsp;&nbsp;
-            <%= link_to 'Your Recipes', recipes_user_path %>
-             &nbsp;&nbsp;|&nbsp;&nbsp;
-            <%= link_to 'Add New Recipe', new_recipe_path %>
-             &nbsp;&nbsp;|&nbsp;&nbsp;
-            <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
-         
+              <div id="nameBox">Welcome To EATme, <%= current_user.name %></div>
+    
+           
+            <%= link_to recipes_path do %>
+            <div class="navBox">All Recipes</div>
+            <% end %>
+            
+            <%= link_to  recipes_user_path do %>
+              <div class="navBox">My Recipes</div>
+            <% end %>
+              
+            <%= link_to new_recipe_path do %>
+            <div class="navBox">Add New Recipe</div>
+            <% end %>
+
+            <%= link_to session_path('dummy'), method: :delete do %>
+            <div class="navBox">Log Out</div>
+            
+            <% end %>
+          
+            
 
           <% else %>
+            
+            <div class="navBox">
             <%= link_to 'Log In', login_path %>
-            &nbsp;&nbsp;|&nbsp;&nbsp;
+            </div>
+           
+            <div class="navBox">
             <%= link_to 'Sign Up', new_user_path %>
+            </div>
+            <div id="eatMe">Welcome to EATme!</div>
           <% end %>
+          
         </p>
       </div>
       

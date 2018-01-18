@@ -1,25 +1,47 @@
-<h1>Recipes</h1>
 
-<div id="boxes">
-    <% @recipes.each do |recipe| %>
+<div class="container">
+    
+    
+    <div class="boxes">
+        <h1 class="title">Recipes</h1>
 
-    <div id="recipeBox">
-        <h1><%= link_to recipe.title, recipe_path(recipe) %></h1>
-        <div>Time: <%= recipe.time %> minutes  &nbsp;|&nbsp;  Servings: <%= recipe.yield %></br> Course: <%= recipe.course %></div>
-        <div>Created: <%= recipe.created_at %></div>
-         <div>Created By: <%= recipe.user.email %></div>
-       
-        </br>
-        <div>
-        <%= link_to 'Show  ', recipe %>
-        <%= link_to '|  Edit Recipe Info |', edit_recipe_path(recipe) if recipe.user == current_user %>
-        <%= link_to 'Delete Recipe', recipe, method: :delete, data: { confirm: 'Are you sure?' } if recipe.user == current_user %>
+        <% @recipes.reverse_each do |recipe| %>
+
+        <div class="recipeCard">
+            <h1><%= link_to recipe.title, recipe_path(recipe) %></h1>
+            <div id="line"></div>
+            <div>Time: <%= recipe.time %> minutes  &nbsp;|&nbsp;  Servings: <%= recipe.yield %></br> Course: <%= recipe.course %></div>
+            <div>Created: <%= recipe.created_at %></div>
+            <div>Created By: <%= recipe.user.email %></div>
+        
+            </br>
+            <div id="cardLinks">
+                <div class="cardLink"><%= link_to 'Look At Recipe  ', recipe %></div>
+                <div class="cardLink"><%= link_to 'Edit Info', edit_recipe_path(recipe) if recipe.user == current_user %></div>
+                <div class="cardLink"><%= link_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure?' } if recipe.user == current_user %></div>
+            </div>
         </div>
+        </br>
+    
+        <% end %>
+
+        <%= link_to new_recipe_path  do %>
+            <div class="button">Create New Recipe</div>
+        <% end %>
+        </br>
     </div>
-    </br>
-<% end %>
+    <div id="imgCol">
+        <img class="sidePic" src="https://i.imgur.com/fktiEjN.png">
+        <img class="sidePic" src="https://i.imgur.com/MQSC8Y8.jpg">
+        <img class="sidePic" src="https://i.imgur.com/6Us2MLO.jpg">
+        <img class="sidePic" src="https://i.imgur.com/Rt8MjgS.jpg">
+        <img class="sidePic" src="https://i.imgur.com/X1b5r2C.jpg">
+        <img class="sidePic" src="https://i.imgur.com/fktiEjN.png">
+        <img class="sidePic" src="https://i.imgur.com/fktiEjN.png">
+        <img class="sidePic" src="https://i.imgur.com/fktiEjN.png">
+        <img class="sidePic" src="https://i.imgur.com/fktiEjN.png">
+
+    </div>
 </div>
 
-</br></br>
 
-<%= link_to 'New Recipe', new_recipe_path %>

@@ -1,7 +1,16 @@
-<h1>My recipes</h1>
+<div id="myRecipeBox">
+    <div id="myRecipes">
+        </br>
+        <h1>My Recipes</h1>
 
-<% @recipes.each do |r| %>
-    <ul>
-        <li><%= link_to r.title, recipe_path(r) %></li>
-    </ul>
-<% end %>
+        <% @recipes.each do |r| %>
+            
+            <%= link_to recipe_path(r) do %>
+                <div><%= r.title %></div>
+            <% end %>
+            
+        
+        <% end %>
+        </br>
+    </div>
+</div>

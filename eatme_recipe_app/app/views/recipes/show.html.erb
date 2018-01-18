@@ -1,9 +1,10 @@
-<div id=#recipeShow>
+<div id="recipeShow">
+    <div id="show">
     <h1><%= @recipe.title %></h1>
     <p>Time to make: <%= @recipe.time %>&nbsp; |&nbsp; Servings: <%= @recipe.yield %> &nbsp; |&nbsp; Course: <%= @recipe.course %></p>
 
-
-    <h3>Ingredients</h3>
+    </br>
+    <h2>Ingredients</h2>
     <% @recipe.ingredients.each do |ingredient| %>
         <ul>
             <li>
@@ -18,8 +19,8 @@
         </ul>
     <% end %>
 
-
-    <h3>Directions</h3>
+    </br>
+    <h2>Directions</h2>
     <% @count = 0 %>
     <% @recipe.directions.each do |direction| %>
     <p><%= @count += 1 %>.&nbsp; <%= direction.instruction %></br>
@@ -30,8 +31,9 @@
                     method: :get if direction.recipe.user == current_user %>
     </p>
     <% end %>
-    <hr>
-
+    
+    <hr class="showLine"> 
+    </br>
 
     <%= form_for ([@recipe, @recipe.ingredients.build]) do |f| %>
         <p>
@@ -53,7 +55,7 @@
     <% end %>
 
     </br>
-    <hr>
+    <hr class="showLine">
 
     <%= form_for ([@recipe, @comment]) do |f| %>
         <p>
@@ -62,12 +64,13 @@
         </p>
         <p><%= f.submit  "Submit Comment" %></p>
     <% end %>
-    <hr>
+    </br>
+    <hr class="showLine">
 
     <div id="commentBox">
-        <h3>Comments</h3>
+        <h2>Comments</h2>
             <% @recipe.comments.reverse_each do |comment| %>
-                <hr>
+                <hr class="showLine">
                 
                 <p><%= comment.user.email %></p>
                 
@@ -82,8 +85,12 @@
             
             <% end %>
     </div>
-    <hr>
+    
+    <hr class="showLine">
+    </br></br>
     <%= link_to 'Edit Recipe', edit_recipe_path(@recipe) %> |
     <%= link_to "Back to Recipe Posts", recipes_path %>
+    </br></br>
+    </div>
 
 </div>

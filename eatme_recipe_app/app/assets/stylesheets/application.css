@@ -14,36 +14,24 @@
  *= require_self
  */
 
-
- 
- #title {
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    flex-direction: column; 
-    text-align: center;  
- }
-
- #header {
-     display: flex;
-     flex-direction: row;
-     justify-content: flex-start;
-
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
 }
 
-#recipeForm {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
+ body {
+    background-color: white;
+    font-family: 'Carter One', cursive;
+    margin: 0px;
+    padding: 0px;
 }
 
-#recipeBox {
-    border: 2px solid red;
-    border-radius: 3%;
-    height: 300px;
-    width: 500px;
-    margin: 5px 15px;
+
+.recipeCard {
+    height: 200px;
+    width: 405px;
+    margin: 5px 25px;
     padding: 5px 10px;
     display: flex;
     justify-content: flex-start;
@@ -52,29 +40,196 @@
     background-color: white;
 }
 
-/* label{
-    width: 7em;
-    float: left;
-    text-align: right;
-    margin-right: 0.5em;
-    display: block
-  } */
+.recipeCard:hover {
+    transform: scale(1.1);
+    transition: .25s;
+}
+
+/* #boxes {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-content: center; 
+    align-items: center;
+    margin: 15px;
+} */
+
+
+.boxes {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin: 20px 350px;
+}
+
+
+#recipeShow {
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+    background-color: #E5E0B7;
+    margin: 0 450px;
+    padding: 35px 0;
+}
+
+#header {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+}
+
+#nameBox {
+    height: 50px;
+    width: 250px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#userLog {
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.navBox {
+    height: 50px;
+    width: 150px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+}
+
+.navBox:hover {
+    background-color: black;
+    color: white;
+    transition: .40s;
+}
+
+#myRecipes {
+    background-color: white;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#myRecipeBox {
+    display: flex;
+    justify-content: center;
+    margin: 35px;
+    padding: 35px;
+}
+
+#line {
+    width: 420px;
+    border: 1px solid #C86763;
+}
+.cardLink {
+    height: 30px;
+    width: 125px;
+    background-color: lightgray;
+    color: white;
+    
+}
+
+#cardLinks {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    transform: scale(1.15);
+    transition: .35s;
+    color: red;
+}
+
+.button {
+    height: 50px;
+    width: 200px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.button:hover {
+    color: black;
+    background-color: white;
+    transition: .35s;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.showLine {
+    background-color: black;
+    height: 1px;
+}
+
+#titlePic {
+    height: 850px;
+    width: 100%; 
+}
+
+
+#eatMe {
+    color: white;
+    width: 205px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sidePic {
+    height: 100%;
+}
+
+.title {
+    color: black;
+    font-size: 65px;
+}
+
+#imgCol {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    
+}
+
+.sidePic {
+    width: 470px;
+    height: 300px;
+}
 
 
 
 
 
-  body {
-    background-color: #C8C8C8;
-    font-family: 'Carter One', cursive;
-  }
 
-  commentBox {
-      background-color: white;
-      border: 2px solid black;
-  }
+
+
+
 
 
   
 
- 
