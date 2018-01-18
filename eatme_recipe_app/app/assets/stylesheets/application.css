@@ -21,7 +21,7 @@
 }
 
  body {
-    background-color: white;
+    background-color: 	#f2f3f4;
     font-family: 'Carter One', cursive;
     margin: 0px;
     padding: 0px;
@@ -29,8 +29,8 @@
 
 
 .recipeCard {
-    height: 200px;
-    width: 405px;
+    height: 220px;
+    width: 455px;
     margin: 5px 25px;
     padding: 5px 10px;
     display: flex;
@@ -38,6 +38,7 @@
     align-items: stretch;
     flex-direction: column;
     background-color: white;
+    border: 0.5px solid #969695;
 }
 
 .recipeCard:hover {
@@ -60,7 +61,7 @@
     flex-direction: column;
     align-content: center;
     align-items: center;
-    margin: 20px 350px;
+    margin: 20px 334px;
 }
 
 
@@ -209,7 +210,7 @@ a:hover {
     font-size: 65px;
 }
 
-#imgCol {
+.imgCol {
     display: flex;
     flex-direction: column;
     margin: 0;

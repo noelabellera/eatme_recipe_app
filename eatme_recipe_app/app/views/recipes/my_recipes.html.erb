@@ -2,13 +2,20 @@
     <div id="myRecipes">
         </br>
         <h1>My Recipes</h1>
-
+        
         <% @recipes.each do |r| %>
+
+        <div class="recipeCard">
             
-            <%= link_to recipe_path(r) do %>
-                <div><%= r.title %></div>
-            <% end %>
+            <h1><%= link_to r.title, recipe_path(r) %></h1>
+            <div id="line"></div>
+            <div>Time: <%= r.time %> minutes  &nbsp;|&nbsp;  Servings: <%= r.yield %>
+            </br> Course: <%= r.course %></div>
+            <div>Created: <%= r.created_at %></div>
+
+            </br>
             
+        </div>
         
         <% end %>
         </br>
