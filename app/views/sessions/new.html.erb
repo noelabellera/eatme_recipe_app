@@ -1,15 +1,28 @@
-<h1>Log In</h1>
-<p id="alert"><%= alert %></p>
-<%= form_tag sessions_path do %>
-  <div class="field">
-    <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email] %>
+<div class="container">
+  <div>
+    <img src="https://i.imgur.com/DpcU3hv.png" id="knife">
   </div>
-  </br>
-  <div class="field">
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+  <div id="loginForm">
+    <h1 class="title">Log In</h1>
+    <p id="alert"><%= alert %></p>
+
+    <%= form_tag sessions_path do %>
+      <div class="field">
+        <%= label_tag :email, "Email: " %>
+        <%= text_field_tag :email, params[:email] %>
+      </div>
+      </br>
+
+      <div class="field">
+        <%= label_tag :password, "Password: "%>
+        <%= password_field_tag :password %>
+      </div>
+
+      </br>
+      <div class="actions"><%= submit_tag "Log In" %></div>
+    <% end %>
   </div>
-  </br>
-  <div class="actions"><%= submit_tag "Log In" %></div>
-<% end %>
+  <div>
+    <img src="https://i.imgur.com/rJknQFp.png" id="knife">
+  </div>
+</div>

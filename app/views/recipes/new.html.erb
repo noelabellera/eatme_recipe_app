@@ -1,31 +1,39 @@
-<div id="recipeForm">
-    <h1>Create Your Recipe</h1>
-    <%= form_for @recipe do |f| %>
-        <div>
-            <%= f.label :title, "Name of Recipe: " %>
-            <%= f.text_field :title %>
-        </div>
-        </br>
-        <div>
-            <%= f.label :time, "Time to make: " %>
-            <%= f.text_field :time %>
-        </div>
-        </br>
-        <div>
-            <%= f.label :yield, "Servings: " %>
-            <%= f.text_field :yield %>
-        </div>
-        </br>
-        <div>
-            <%= f.label :course, "Course:  " %>
-            <%= f.text_field :course %>
-        </div>
+<div class="container">
+    <div>
+        <img src="https://i.imgur.com/DpcU3hv.png" id="knife">
+    </div>
+    <div id="recipeForm">
+        <h1>Create Your Recipe</h1>
+        <%= form_for @recipe do |f| %>
+            <div>
+                <%= f.label :title, "Name of Recipe: " %>
+                <%= f.text_field :title %>
+            </div>
+            </br>
+            <div>
+                <%= f.label :time, "Time to make: " %>
+                <%= f.text_field :time %>
+            </div>
+            </br>
+            <div>
+                <%= f.label :yield, "Servings: " %>
+                <%= f.text_field :yield %>
+            </div>
+            </br>
+            <div>
+                <%= f.label :course, "Course:  " %>
+                <%= f.text_field :course %>
+            </div>
+            </br>
+
+            <%= f.submit "Add Ingredients and Directions" %>
+
+        <% end %>
         </br>
 
-        <%= f.submit "Add Ingredients and Directions" %>
-
-    <% end %>
-    </br>
-
-    <%= link_to "Back to Recipe Posts", recipes_path %>
+        <%= link_to "Back to Recipe Posts", recipes_path %>
+    </div>
+    <div>
+        <img src="https://i.imgur.com/rJknQFp.png" id="knife">
+    </div>
 </div>

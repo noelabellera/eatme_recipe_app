@@ -1,6 +1,17 @@
-<%= form_for (@comment) do |f| %>
-    <%= f.label :post %>
-    <%= f.text_area :post %>
-    </br>
-    <%= f.submit "Edit Comment" %>
-<% end %>
+<div class="container">
+    <div>
+        <img src="https://i.imgur.com/DpcU3hv.png" id="knife">
+    </div> 
+    <div class="form">
+        <h1 class="title">Edit Comment</h1>
+        <%= form_for (@comment) do |f| %>
+            <%= f.label :post, "Edit Comment: " %></br>
+            <%= f.text_area :post %>
+            </br>
+            <%= f.submit "Submit" %>
+        <% end %>
+    </div>
+    <div>
+        <img src="https://i.imgur.com/rJknQFp.png" id="knife">
+    </div>
+</div>

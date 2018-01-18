@@ -1,6 +1,17 @@
-<%= form_for (@ingredient) do |f| %>
-    <%= f.label :item %>
-    <%= f.text_field :item %>
-    </br>
-    <%= f.submit "Edit Ingredient" %>
-<% end %>
+<div class="container">  
+    <div>
+        <img src="https://i.imgur.com/DpcU3hv.png" id="knife">
+    </div>   
+    <div class="form">
+    <h1 class="title">Edit Ingredient</h1>
+    <%= form_for @ingredient do |f| %>
+        <%= f.label :item, "ITEM: " %>
+        <%= f.text_field :item %></br>
+        <%= f.submit "Submit" %>
+    <% end %>
+    </div>
+    <div>
+        <img src="https://i.imgur.com/rJknQFp.png" id="knife">
+    </div>
+
+</div>

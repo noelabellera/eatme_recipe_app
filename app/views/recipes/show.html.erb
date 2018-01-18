@@ -1,22 +1,24 @@
+<div class="container">
+<div>
+<img src="https://i.imgur.com/DpcU3hv.png" id="knife">
+</div>
 <div id="recipeShow">
     <div id="show">
-    <h1><%= @recipe.title %></h1>
+    <h1 class="title"><%= @recipe.title %></h1>
     <p>Time to make: <%= @recipe.time %>&nbsp; |&nbsp; Servings: <%= @recipe.yield %> &nbsp; |&nbsp; Course: <%= @recipe.course %></p>
 
     </br>
     <h2>Ingredients</h2>
     <% @recipe.ingredients.each do |ingredient| %>
-        <ul>
-            <li>
-                <%= ingredient.item %> </br>
-                <%= link_to '( Delete |', ingredient_path(ingredient),
-                    method: :delete,
-                    data: { confirm: 'Are You Sure?' } if ingredient.recipe.user == current_user %>
+        <p> - 
+            <%= ingredient.item %> </br>
+            <%= link_to '( Delete |', ingredient_path(ingredient),
+                method: :delete,
+                data: { confirm: 'Are You Sure?' } if ingredient.recipe.user == current_user %>
                 
-                <%= link_to 'Edit )', edit_ingredient_path(ingredient),
-                    method: :get if ingredient.recipe.user == current_user %>
-            </li>
-        </ul>
+            <%= link_to 'Edit )', edit_ingredient_path(ingredient),
+                method: :get if ingredient.recipe.user == current_user %>
+         </p>  
     <% end %>
 
     </br>
@@ -93,4 +95,8 @@
     </br></br>
     </div>
 
+</div>
+<div>
+    <img src="https://i.imgur.com/rJknQFp.png" id="knife">
+</div>
 </div>
