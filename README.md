@@ -23,7 +23,7 @@ EatMe is a recipe sharing app where cooks of all kinds can share their recipes a
 
 [EATme recipe app](https://eat-me-recipes.herokuapp.com/)
 
-## Link for to the Trello Board
+## Link to the Trello Board
 [Trello Board](https://trello.com/b/sPGEzUe4/eat-me-project-2-wdi)
 
 ## Unsolved Problems
