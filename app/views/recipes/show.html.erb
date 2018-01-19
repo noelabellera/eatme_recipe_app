@@ -1,121 +1,106 @@
 <div class="container">
-<div>
-<img src="https://i.imgur.com/DpcU3hv.png" id="knife">
-</div>
-<div id="recipeShow">
-    <div id="show">
-    <h1 class="title"><%= @recipe.title %></h1>
-    <hr class="showLine">
-    <p>Time to make: <%= @recipe.time %>&nbsp; |&nbsp; Servings: <%= @recipe.yield %> &nbsp; |&nbsp; Course: <%= @recipe.course %></p>
-    <p>Submitted By: <%= @recipe.user.email %></p>
-    <% if @recipe.user == current_user %>
-    <button><%= link_to 'Edit Recipe Info', edit_recipe_path(@recipe) %></button>
-    <button>
-        <%= link_to 'Delete Recipe', recipe_path(@recipe),
-        method: :delete,
-        data: { confirm: 'Are You Sure?' }  %>
-    </button>
-    <% end %>
+    <div>
+        <img src="https://i.imgur.com/DpcU3hv.png" id="knife">
+    </div>
 
-    </br>
-    <h2>Ingredients</h2>
-    <% @recipe.ingredients.each do |ingredient| %>
-        <p> - 
-            <%= ingredient.item %> </br>
-            <%= link_to '( Delete |', ingredient_path(ingredient),
-                method: :delete,
-                data: { confirm: 'Are You Sure?' } if ingredient.recipe.user == current_user %>
+    <div id="recipeShow">
+        <div id="show">
+            <h1 class="title"><%= @recipe.title %></h1>
+            <hr class="showLine">
+            <p>Time to make: <%= @recipe.time %>&nbsp; |&nbsp; Servings: <%= @recipe.yield %> &nbsp; |&nbsp; Course: <%= @recipe.course %></p>
+            <p>Submitted By: <%= @recipe.user.email %></p>
+            <% if @recipe.user == current_user %>
+                <button><%= link_to 'Edit Recipe Info', edit_recipe_path(@recipe) %></button>
+                <button>
+                    <%= link_to 'Delete Recipe', recipe_path(@recipe),
+                        method: :delete,
+                        data: { confirm: 'Are You Sure?' }  %>
+                </button>
+            <% end %></br>
+
+            <h2>Ingredients</h2>
+            <% @recipe.ingredients.each do |ingredient| %>
+            <p> - 
+                <%= ingredient.item %> </br>
+                <%= link_to '( Delete |', ingredient_path(ingredient),
+                    method: :delete,
+                    data: { confirm: 'Are You Sure?' } if ingredient.recipe.user == current_user %>
                 
-            <%= link_to 'Edit )', edit_ingredient_path(ingredient),
-                method: :get if ingredient.recipe.user == current_user %>
-         </p>  
-    <% end %>
+                <%= link_to 'Edit )', edit_ingredient_path(ingredient),
+                    method: :get if ingredient.recipe.user == current_user %>
+            </p>  
+            <% end %></br>
 
-    </br>
-    <h2>Directions</h2>
-    <% @count = 0 %>
-    <% @recipe.directions.each do |direction| %>
-    <p><%= @count += 1 %>.&nbsp; <%= direction.instruction %></br>
-        <%= link_to '( Delete |', direction_path(direction),
+            <h2>Directions</h2>
+            <% @count = 0 %>
+            <% @recipe.directions.each do |direction| %>
+                <p><%= @count += 1 %>.&nbsp; <%= direction.instruction %></br>
+                <%= link_to '( Delete |', direction_path(direction),
                     method: :delete,
                     data: { confirm: 'Are You Sure?'  } if direction.recipe.user == current_user %> 
-        <%= link_to 'Edit )', edit_direction_path(direction),
+                <%= link_to 'Edit )', edit_direction_path(direction),
                     method: :get if direction.recipe.user == current_user %>
-    </p>
-    <% end %>
+                </p>
+            <% end %>
     
-    <hr class="showLine"> 
-    </br>
+            <hr class="showLine"></br>
 
-    <% if @recipe.user == current_user%>
-        <%= form_for ([@recipe, @recipe.ingredients.build]) do |f| %>
-            <p>
-                <%= f.label :item, 'Ingredient: '%></br>
-                <%= f.text_field :item %>
-            </p></br>
-            <p><%= f.submit "Add Ingredient" %></p>
+            <% if @recipe.user == current_user%>
+                <%= form_for ([@recipe, @recipe.ingredients.build]) do |f| %>
+                <p>
+                    <%= f.label :item, 'Ingredient: '%></br>
+                    <%= f.text_field :item %>
+                </p></br>
+                <p><%= f.submit "Add Ingredient" %></p>
+                <% end %></br>
 
-            
-    <% end %>
-    </br>
-    <hr class="showLine">
-        <%= form_for ([@recipe, @recipe.directions.build]) do |f| %>
-            <p>
-                <%= f.label :instruction, 'Direction: ' %></br>
-                <%= f.text_area :instruction %>
-            </p></br>
-            <p><%= f.submit  "Add Direction" %></p>
-        <% end %>
-        </br>
-        <hr class="showLine">
-    <% end %>
-
-
-
-    <%= form_for ([@recipe, @comment]) do |f| %>
-        <p>
-            <%= f.label :post, 'Leave a comment' %></br>
-            <%= f.text_area :post %>
-        </p>
-        <p><%= f.submit  "Submit Comment" %></p>
-    <% end %>
-    </br>
-    <hr class="showLine">
-
-    <div id="commentBox">
-        <h2>Comments</h2>
-                <% @recipe.comments.reverse_each do |comment| %>
                 <hr class="showLine">
-                
-                <p class="smallText">Submitted By: <%= comment.user.email %></p>
-                
-                <p><%= comment.post %></p>
-                <%= link_to '( Delete ', comment_path(comment),
-                    method: :delete,
-                    data: { confirm: 'Are You Sure?'  } if comment.user == current_user %> 
-                <%= link_to '| Edit )', edit_comment_path(comment),
-                    method: :get if comment.user == current_user %>
-                <% end %>
-            
-           
-                
-            
-                
-    </div>
+                <%= form_for ([@recipe, @recipe.directions.build]) do |f| %>
+                <p>
+                    <%= f.label :instruction, 'Direction: ' %></br>
+                    <%= f.text_area :instruction %>
+                </p></br>
+                <p><%= f.submit  "Add Direction" %></p>
+                <% end %></br>
+                <hr class="showLine">
+            <% end %>
+
+            <%= form_for ([@recipe, @comment]) do |f| %>
+                <p>
+                    <%= f.label :post, 'Leave a comment' %></br>
+                    <%= f.text_area :post %>
+                </p>
+                <p><%= f.submit  "Submit Comment" %></p>
+            <% end %></br>
+            <hr class="showLine">
+
+            <div id="commentBox">
+                <h2>Comments</h2>
+                    <% @recipe.comments.reverse_each do |comment| %>
+                        <hr class="showLine">
+                        <p class="smallText">Submitted By: <%= comment.user.email %></p>
+                        <p><%= comment.post %></p>
+                        <%= link_to '( Delete ', comment_path(comment),
+                            method: :delete,
+                            data: { confirm: 'Are You Sure?'  } if comment.user == current_user %> 
+                        <%= link_to '| Edit )', edit_comment_path(comment),
+                            method: :get if comment.user == current_user %>
+                    <% end %>
+            </div>
     
-    <hr class="showLine">
-    </br></br>
-    <div id='back'>
-    <%= link_to recipes_path  do %>
-         <div class="button">Back to All Recipes</div>
-    <% end %>
-    </div>
-    </br></br>
+            <hr class="showLine">
+            </br></br>
+            <div id='back'>
+                <%= link_to recipes_path  do %>
+                    <div class="button">Back to All Recipes</div>
+                <% end %>
+            </div></br></br>
+        </div>
+
     </div>
 
-</div>
-<div>
-    <img src="https://i.imgur.com/rJknQFp.png" id="knife">
-</div>
+    <div>
+        <img src="https://i.imgur.com/rJknQFp.png" id="knife">
+    </div>
 </div>
     

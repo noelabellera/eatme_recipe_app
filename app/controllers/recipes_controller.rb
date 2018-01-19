@@ -54,6 +54,10 @@ class RecipesController < ApplicationController
         @recipes = current_user.recipes
     end
 
+    def favorites
+        @recipes = current_user.recipes
+    end
+
     
     private
 

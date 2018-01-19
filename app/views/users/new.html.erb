@@ -3,9 +3,8 @@
     <img src="https://i.imgur.com/DpcU3hv.png" id="knife">
   </div>
   
-
   <div class="form">
-  <h1 class="title">Sign Up</h1>
+    <h1 class="title">Sign Up</h1>
     <%= form_for @user do |f| %>
       <% if @user.errors.any? %>
         <div class="error_messages">
@@ -17,26 +16,23 @@
           </ul>
         </div>
       <% end %>
+
       <div class="field">
         <%= f.label :name, "NAME:  " %></br>
         <%= f.text_field :name %>
-      </div>
-      </br>
+      </div></br>
       <div class="field">
         <%= f.label :email, "EMAIL:  " %></br>
         <%= f.text_field :email %>
-      </div>
-      </br>
+      </div></br>
       <div class="field">
         <%= f.label :password, "PASSWORD:  " %></br>
         <%= f.password_field :password %>
-      </div>
-      </br>
+      </div></br>
       <div class="field">
         <%= f.label :password_confirmation, "PASSWORD CONFIRMATION:  "%></br>
         <%= f.password_field :password_confirmation %>
-      </div>
-      </br>
+      </div></br>
       <div class="actions"><%= f.submit %></div>
     <% end %>
   </div>

@@ -1,13 +1,13 @@
 class LikesController < ApplicationController
-    def create 
-        current_user.recipes << Recipe.find(params[:recipe_id])
-        @recipe = Recipe.find(params[:recipe_id])
+    
+    def create
+        current_user.likes.create(recipe_id: params[:recipe_id])
         redirect_to recipe_path(params[:recipe_id])
-    end 
+    end
 
     def destroy
-        @recipe = current_user.recipes.find(params[:id])
-        current_user.recipes.delete(@recipe)
+        @like = Like.find_by(user: current_user, recipe_id: params[:id])
+        @like.destroy
         redirect_to recipe_path(params[:id])
     end 
 

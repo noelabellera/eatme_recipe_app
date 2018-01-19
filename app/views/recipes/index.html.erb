@@ -12,7 +12,7 @@
             <div class="recipeCard">
                 <h1><%= link_to recipe.title, recipe_path(recipe) %></h1>
                 <div id="line"></div>
-                <div>Time: <%= recipe.time %> minutes  &nbsp;|&nbsp;  Servings: <%= recipe.yield %></br> Course: <%= recipe.course %></div>
+                <div>Time: <%= recipe.time %> &nbsp;|&nbsp;  Servings: <%= recipe.yield %></br> Course: <%= recipe.course %></div>
                 <div>Created By: <%= recipe.user.email %></div>
                 <div>Submitted: <%= recipe.created_at %></div>
             
