@@ -2,31 +2,31 @@
     <div>
         <img src="https://i.imgur.com/DpcU3hv.png" id="knife">
     </div>
-    <div id="recipeForm">
+    <div class="form">
         <h1>Create Your Recipe</h1>
         <%= form_for @recipe do |f| %>
             <div>
-                <%= f.label :title, "Name of Recipe: " %>
+                <%= f.label :title, "Name of Recipe: " %></br>
                 <%= f.text_field :title %>
             </div>
             </br>
             <div>
-                <%= f.label :time, "Time to make: " %>
+                <%= f.label :time, "Time to make: " %></br>
                 <%= f.text_field :time %>
             </div>
             </br>
             <div>
-                <%= f.label :yield, "Servings: " %>
+                <%= f.label :yield, "Servings: " %></br>
                 <%= f.text_field :yield %>
             </div>
             </br>
             <div>
-                <%= f.label :course, "Course:  " %>
+                <%= f.label :course, "Course:  " %></br>
                 <%= f.text_field :course %>
             </div>
             </br>
 
-            <%= f.submit "Add Ingredients and Directions" %>
+           <%= f.submit "Add Ingredients and Directions" %>
 
         <% end %>
         </br>

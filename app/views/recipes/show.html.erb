@@ -37,27 +37,30 @@
     <hr class="showLine"> 
     </br>
 
-    <%= form_for ([@recipe, @recipe.ingredients.build]) do |f| %>
-        <p>
-            <%= f.label :item, 'Ingredient'%></br>
-            <%= f.text_field :item %>
-        </p>
-        <p><%= f.submit "Add Ingredient" %></p>
+    <% if @recipe.user == current_user%>
+        <%= form_for ([@recipe, @recipe.ingredients.build]) do |f| %>
+            <p>
+                <%= f.label :item, 'Ingredient'%></br>
+                <%= f.text_field :item %>
+            </p>
+            <p><%= f.submit "Add Ingredient" %></p>
 
-        
+            
+        <% end %>
+
+
+        <%= form_for ([@recipe, @recipe.directions.build]) do |f| %>
+            <p>
+                <%= f.label :instruction, 'Direction' %></br>
+                <%= f.text_area :instruction %>
+            </p>
+            <p><%= f.submit  "Add Direction" %></p>
+        <% end %>
+        </br>
+        <hr class="showLine">
     <% end %>
 
 
-    <%= form_for ([@recipe, @recipe.directions.build]) do |f| %>
-        <p>
-            <%= f.label :instruction, 'Direction' %></br>
-            <%= f.text_area :instruction %>
-        </p>
-        <p><%= f.submit  "Add Direction" %></p>
-    <% end %>
-
-    </br>
-    <hr class="showLine">
 
     <%= form_for ([@recipe, @comment]) do |f| %>
         <p>
@@ -74,7 +77,7 @@
             <% @recipe.comments.reverse_each do |comment| %>
                 <hr class="showLine">
                 
-                <p><%= comment.user.email %></p>
+                <p class="smallText">Submitted By: <%= comment.user.email %></p>
                 
                 <p><%= comment.post %></p>
                 <%= link_to '( Delete ', comment_path(comment),
@@ -100,3 +103,4 @@
     <img src="https://i.imgur.com/rJknQFp.png" id="knife">
 </div>
 </div>
+    

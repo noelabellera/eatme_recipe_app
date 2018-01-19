@@ -102,6 +102,20 @@
     text-decoration: none;
 }
 
+#logOutBox {
+    height: 50px;
+    width: 150px;
+    background-color: tomato;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+}
+
+#logOutBox.hover {
+    transition: .40s;
+}
 .navBox:hover {
     background-color: black;
     color: white;
@@ -176,7 +190,6 @@ a:hover {
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
-    align-items: center;
 }
 
 .showLine {
@@ -185,7 +198,7 @@ a:hover {
 }
 
 #titlePic {
-    height: 850px;
+    height: 925px;
     width: 100%; 
 }
 
@@ -263,6 +276,41 @@ a:hover {
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
+}
+
+
+img.like-unlike {
+    height: 35px;
+    width: auto;
+}
+
+input {
+    height: 25px;
+    width: 225px;
+    font-size: 13px;
+}
+
+input:hover {
+    border: 0.5px solid black;
+}
+
+.click {
+    height: 30px;
+    background-color: black;
+}
+textarea {
+    height: 30px;
+    width: 500px;
+}
+
+#commentBox {
+    background-color: white;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.smallText {
+    font-size: 12px;
 }
 
 
