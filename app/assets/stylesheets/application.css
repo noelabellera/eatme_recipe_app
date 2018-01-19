@@ -20,6 +20,17 @@
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    transform: scale(1.15);
+    transition: .35s;
+    color: red;
+}
+
  body {
     background-color: 	#f2f3f4;
     font-family: 'Carter One', cursive;
@@ -27,6 +38,110 @@
     padding: 0px;
 }
 
+button {
+    height: 20px;
+    width: 120px;
+    margin: 5px;
+    background-color: lightgray;
+    color: black;
+    font-size: 15px;
+    border: 0.4px solid black;
+
+}
+
+img.like-unlike {
+    height: 35px;
+    width: auto;
+}
+
+input {
+    height: 25px;
+    width: 225px;
+    font-size: 13px;
+}
+
+input:hover {
+    border: 0.5px solid black;
+}
+
+textarea {
+    height: 60px;
+    width: 400px;
+}
+
+.boxes {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin: 20px 334px;
+}
+
+.button {
+    height: 50px;
+    width: 200px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.button:hover {
+    color: black;
+    background-color: white;
+    transition: .35s;
+}
+
+.cardLinks {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin: 10px;
+}
+
+.click {
+    height: 30px;
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.imgCol {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.navBox {
+    height: 50px;
+    width: 150px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+}
+
+.navBox:hover {
+    background-color: black;
+    color: white;
+    transition: .40s;
+}
 
 .recipeCard {
     height: 220px;
@@ -46,27 +161,54 @@
     transition: .25s;
 }
 
-
-
-
-.boxes {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    margin: 20px 334px;
+.recipeList {
+    height: 895px;
+    overflow-y: scroll;
 }
 
+.smallText {
+    font-size: 12px;
+}
+.showLine {
+    background-color: black;
+    height: 1px;
+}
 
-#recipeShow {
+.sidePic {
+    width: 520px;
+    height: 315px;
+}
+
+.title {
+    color: black;
+    font-size: 65px;
+}
+
+#back {
+    display: flex;
+    justify-content: center;
+}
+
+#commentBox {
+    background-color: white;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+#eatMe {
+    color: white;
+    width: 205px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#editRecipe {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
-    padding: 55px;
-    background-color: #F2F3F4;
-    height: 800px;
-    overflow-y: scroll;
+    padding: 55px;;
 }
 
 #header {
@@ -75,31 +217,22 @@
     flex-direction: row;
 }
 
-#nameBox {
-    height: 50px;
+#knife {
+    height: 940px;
     width: 250px;
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-#userLog {
-    display: flex;
-    align-items: flex-end;
+#line {
+    width: 440px;
+    border: 1px solid #C86763;
 }
 
-
-.navBox {
-    height: 50px;
-    width: 150px;
-    background-color: white;
+#loginForm {
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: black;
-    text-decoration: none;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 55px;
 }
 
 #logOutBox {
@@ -114,11 +247,6 @@
 }
 
 #logOutBox.hover {
-    transition: .40s;
-}
-.navBox:hover {
-    background-color: black;
-    color: white;
     transition: .40s;
 }
 
@@ -139,121 +267,14 @@
     
 }
 
-#line {
-    width: 440px;
-    border: 1px solid #C86763;
-}
-
-.cardLinks {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    margin: 10px;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-a:hover {
-    transform: scale(1.15);
-    transition: .35s;
-    color: red;
-}
-
-.button {
+#nameBox {
     height: 50px;
-    width: 200px;
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.button:hover {
-    color: black;
-    background-color: white;
-    transition: .35s;
-}
-
-.container {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: row;
-}
-
-.showLine {
-    background-color: black;
-    height: 1px;
-}
-
-#titlePic {
-    height: 925px;
-    width: 100%; 
-}
-
-
-#eatMe {
-    color: white;
-    width: 205px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#sidePic {
-    height: 100%;
-}
-
-.title {
-    color: black;
-    font-size: 65px;
-}
-
-.imgCol {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    
-}
-
-.sidePic {
-    width: 520px;
-    height: 315px;
-}
-
-#editRecipe {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin: 0 auto;
-    padding: 55px;;
-}
-
-.recipeList {
-    height: 895px;
-    overflow-y: scroll;
-}
-
-::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
-}
-
-#knife {
-    height: 940px;
     width: 250px;
-}
-
-#loginForm {
+    background-color: black;
+    color: white;
     display: flex;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    margin: 0 auto;
-    padding: 55px;
 }
 
 #recipeForm {
@@ -264,63 +285,98 @@ a:hover {
     padding: 55px;
 }
 
-.form {
+#recipeShow {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
+    padding: 55px;
+    background-color: #F2F3F4;
+    height: 800px;
+    overflow-y: scroll;
 }
 
-
-img.like-unlike {
-    height: 35px;
-    width: auto;
+#sidePic {
+    height: 100%;
 }
 
-input {
-    height: 25px;
-    width: 225px;
-    font-size: 13px;
+#titlePic {
+    height: 925px;
+    width: 100%; 
 }
 
-input:hover {
-    border: 0.5px solid black;
-}
-
-.click {
-    height: 30px;
-    background-color: black;
-}
-textarea {
-    height: 30px;
-    width: 500px;
-}
-
-#commentBox {
-    background-color: white;
-    padding: 15px;
-    margin: 0 auto;
-}
-
-.smallText {
-    font-size: 12px;
-}
-
-button {
-    height: 20px;
-    width: 120px;
-    margin: 5px;
-    background-color: lightgray;
-    color: black;
-    font-size: 15px;
-    border: 0.4px solid black;
-
-}
-
-#back {
+#userLog {
     display: flex;
-    justify-content: center;
+    align-items: flex-end;
 }
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

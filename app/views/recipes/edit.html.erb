@@ -6,28 +6,29 @@
         <h1 class="title ">Edit Your Recipe</h1>
         <%= form_for @recipe do |f| %>
             <div>
-                <%= f.label :title, "Title: " %>
+                <%= f.label :title, "Title: " %></br>
                 <%= f.text_field :title %>
             </div>
             </br>
             <div>
-                <%= f.label :time, "Time: " %>
+                <%= f.label :time, "Time: " %></br>
                 <%= f.text_field :time %>
             </div>
             </br>
             <div>
-                <%= f.label :yield, "Yield: " %>
+                <%= f.label :yield, "Yield: " %></br>
                 <%= f.text_field :yield %>
             </div>
             </br>
             <div>
-                <%= f.label :course, "Course: " %>
+                <%= f.label :course, "Course: " %></br>
                 <%= f.text_field :course %>
             </div>
             </br>
 
             <%= f.submit "Edit Recipe" %>
         <% end %></br>
+        
         <%= link_to "Back to Recipe Posts", recipes_path %>
     </div>
     

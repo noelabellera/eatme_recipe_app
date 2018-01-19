@@ -1,9 +1,9 @@
 # EatMe Recipe App
 
-## A bit about the EatMe app
-EatMe is a recipe sharing app where cooks of all kinds can share their recipes as well as check out other recipes. EatMe is also a great place to store your recipes all in one digital space. Think of it as your online cookbook. With EatMe's interface,you can edit your recipes on the fly. Feel free to comment on other user's recipes as well. Never lose that favorite recipe again and happy cooking!
+## About the EatMe app
+EatMe is a recipe sharing app where cooks of all kinds can share their recipes as well as check out other recipes from other users. EatMe is also a great place to store your recipes all in one digital space. Think of it as your online cookbook. With EatMe's interface, you can edit your recipes on the fly. Feel free to comment on other user's recipes as well. Never lose that favorite recipe again and happy cooking!
 
-#Getting Started
+# Getting Started
 
 ## Technologies used:
 * HTML
@@ -19,14 +19,14 @@ EatMe is a recipe sharing app where cooks of all kinds can share their recipes a
 
 ## Click on the link below to try it out
 
-[Click Here for Star Wars Slot Machine](https://eat-me-recipes.herokuapp.com/)
+[EATme recipe app](https://eat-me-recipes.herokuapp.com/)
 
 ## Link for to the Trello Board
-[Click Here for Star Wars Slot Machine](https://trello.com/b/sPGEzUe4/eat-me-project-2-wdi)
+[Trello Board](https://trello.com/b/sPGEzUe4/eat-me-project-2-wdi)
 
 ## Unsolved Problems
 1. Adding a favorites/likes button and storing it into a favorites/likes page
-1. Search Bar to search for recipes or keywords within a recipe
+1. Search Bar to search for recipes or keywords
 1. Filter through recipes through catagories (Course, Time, Alphabetical)
 1. Toggle up and down for recipe directions and ingredients
 
