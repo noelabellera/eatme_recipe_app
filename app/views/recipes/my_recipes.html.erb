@@ -4,8 +4,11 @@
         <img class="sidePic" src="https://i.imgur.com/MQSC8Y8.jpg">
         <img class="sidePic" src="https://i.imgur.com/6Us2MLO.jpg">
     </div>
-    <div id="myRecipes">
-        <h1 class="title">My Recipes</h1>
+
+ 
+    <div class="recipeList">
+        <div class="boxes">
+        <h1 id="myTitle">My Recipes</h1>
         <% @recipes.each do |r| %>
         <div class="recipeCard">
             <h1><%= link_to r.title, recipe_path(r) %></h1>
@@ -16,6 +19,7 @@
             </br>
         </div>
         <% end %></br>
+        </div>
     </div>
     
     <div>

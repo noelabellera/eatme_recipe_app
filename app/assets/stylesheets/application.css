@@ -166,6 +166,17 @@ textarea {
     overflow-y: scroll;
 }
 
+.recipeShow {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 55px;
+    background-color: #F2F3F4;
+    height: 800px;
+    overflow-y: scroll;
+}
+
 .smallText {
     font-size: 12px;
 }
@@ -267,6 +278,10 @@ textarea {
     
 }
 
+#myTitle {
+    font-size: 45px;
+}
+
 #nameBox {
     height: 50px;
     width: 250px;
@@ -283,17 +298,6 @@ textarea {
     flex-direction: column;
     margin: 0 auto;
     padding: 55px;
-}
-
-#recipeShow {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin: 0 auto;
-    padding: 55px;
-    background-color: #F2F3F4;
-    height: 800px;
-    overflow-y: scroll;
 }
 
 #sidePic {
