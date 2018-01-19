@@ -25,7 +25,6 @@ EatMe is a recipe sharing app where cooks of all kinds can share their recipes a
 [Trello Board](https://trello.com/b/sPGEzUe4/eat-me-project-2-wdi)
 
 ## Unsolved Problems
-1. Adding a favorites/likes button and storing it into a favorites/likes page
 1. Search Bar to search for recipes or keywords
 1. Filter through recipes through catagories (Course, Time, Alphabetical)
 1. Toggle up and down for recipe directions and ingredients
