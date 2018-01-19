@@ -18,9 +18,9 @@
             
                 </br>
                 <div class="cardLinks">
-                    <div class="cardLink"><%= link_to 'Look At Recipe  ', recipe %></div>
-                    <div class="cardLink"><%= link_to 'Edit Info', edit_recipe_path(recipe) if recipe.user == current_user %></div>
-                    <div class="cardLink"><%= link_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure?' } if recipe.user == current_user %></div>
+                    <div class="cardLink"><%= link_to 'Look At Recipe ', recipe %></div>
+                    <div class="cardLink">&nbsp;&nbsp;<%= link_to '|  Edit Info  |', edit_recipe_path(recipe) if recipe.user == current_user %></div>
+                    <div class="cardLink">&nbsp;&nbsp;<%= link_to '  Delete', recipe, method: :delete, data: { confirm: 'Are you sure?' } if recipe.user == current_user %></div>
                 </div>
             </div>
             </br>
