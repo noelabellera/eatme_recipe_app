@@ -55,7 +55,7 @@ class RecipesController < ApplicationController
     end
 
     def favorites
-        @recipes = current_user.recipes
+        @recipes = current_user.liked_recipes
     end
 
     

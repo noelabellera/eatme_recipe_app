@@ -5,7 +5,15 @@
 
     <div class="recipeShow">
         <div>
-            <h1 class="title"><%= @recipe.title %></h1>
+            <h1 class="title">
+                <%= @recipe.title %>
+
+                <%= link_to image_tag('emptyStar.png', class: 'like-unlike'), recipe_likes_path(@recipe), 
+                    method: :post  if current_user && !current_user.liked_recipes.include?(@recipe) %>
+                <%= link_to image_tag('redStar.png', class: 'like-unlike'),  like_path(@recipe), 
+                    method: :delete  if current_user && current_user.liked_recipes.include?(@recipe) %>
+            
+            </h1>
             <hr class="showLine">
             <p>Time to make: <%= @recipe.time %>&nbsp; |&nbsp; Servings: <%= @recipe.yield %> &nbsp; |&nbsp; Course: <%= @recipe.course %></p>
             <p>Submitted By: <%= @recipe.user.email %></p>
