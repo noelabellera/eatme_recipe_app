@@ -3,7 +3,7 @@
 ## About the EatMe app
 EatMe is a recipe sharing app where cooks of all kinds can share their recipes as well as check out other recipes from other users. EatMe is also a great place to store your recipes all in one digital space. Think of it as your online cookbook. With EatMe's interface, you can edit your recipes on the fly. Feel free to comment on other user's recipes as well. Never lose that favorite recipe again and happy cooking!
 
-# Getting Started
+
 
 ## Technologies used:
 * HTML
@@ -11,6 +11,8 @@ EatMe is a recipe sharing app where cooks of all kinds can share their recipes a
 * Ruby
 * Ruby on Rails
 * Flexbox
+
+# Getting Started
 
 ## Here's a peek at the EatMe Recipe App!
 ![EatMe App Screen Shot](https://i.imgur.com/trJt2cX.png)
